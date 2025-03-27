@@ -4,7 +4,7 @@ A convolutional neural network which classifies galaxy morphology (either ellipt
 ## Description
 I tested many different network architectures, but I've only included my final model here, which achieved an 86.5% accuracy. This is a good test accuracy for galaxy morphology, which is relatively qualitative and difficult to definitively classify. My final CNN is a relatively simple model, with only 5 convolutional layers, and one data sample that I split into training, validation, and test samples. I reduced overfitting using dropout layers, as well as image augmentation. 
 
-The code here includes the model architecture itself, and the training + testing code. Running the model architecture code creates checkpoints with each epoch trained, and saves the best checkpoint as a model file to use in testing. However, I've also included the best model file I generated while testing (`CNN_Model_Checkpoints7.keras`), which you can use if you'd like to obtain the same test accuracy I did. I trained my model for <4 hours, which was sufficient to obtain a good test accuracy, but it is possible to reduce overfitting further and train for many more epochs/hours. 
+The code here includes the model architecture itself, and the training + testing code. Running the model architecture code creates checkpoints with each epoch trained, and saves the best checkpoint as a model file to use in testing. I trained my model for <4 hours, which was sufficient to obtain a good test accuracy, but it is possible to reduce overfitting further and train for many more epochs/hours. 
 
 ## Getting Started 
 
