@@ -35,9 +35,9 @@ gal_df.insert(0, 'Index', gal_df.index)
 gal_df.head(10)  # prints out first 10 rows of df
 
 # model construction
-inputs7 = keras.Input(shape=(64, 64, 3))  
+inputs = keras.Input(shape=(64, 64, 3))  
 
-x = layers.Conv2D(filters=32, kernel_size=3, activation="relu", padding="same")(inputs7)
+x = layers.Conv2D(filters=32, kernel_size=3, activation="relu", padding="same")(inputs)
 x = layers.BatchNormalization()(x) #added batch normalization
 x = layers.Conv2D(filters=32, kernel_size=3, activation="relu", padding="same")(x)  
 x = layers.BatchNormalization()(x)
@@ -61,14 +61,14 @@ x = layers.Dropout(0.5)(x)
 x = layers.Dense(256, activation="relu")(x)
 x = layers.BatchNormalization()(x)
 
-outputs7 = layers.Dense(2, activation="sigmoid")(x)
+outputs = layers.Dense(2, activation="sigmoid")(x)
 
-model7 = keras.Model(inputs=inputs7, outputs=outputs7)
+model = keras.Model(inputs=inputs, outputs=outputs)
 
-model7.summary()  # prints summary of model 
+model.summary()  # prints summary of model 
 
 # choosing optimizer and loss functions, and metric to evaluate results 
-model7.compile(optimizer='adam',
+model.compile(optimizer='adam',
              loss='binary_crossentropy',
              metrics=['accuracy'])
 
